@@ -52,7 +52,7 @@ function CardContent() {
 									<Plus size={20} />
 								</button>
 								<button
-									className="flex flex-1 items-center justify-center gap-1 px-2 py-1 bg-blue-600 text-white cursor-pointer rounded-br-lg hover:bg-blue-700 transition"
+									className="flex flex-1 items-center justify-center gap-1 px-1 py-1 bg-blue-600 text-white cursor-pointer rounded-br-lg hover:bg-blue-700 transition"
 									onClick={() => addToCart()}>
 									<ShoppingBag size={20} />
 									เลือก
