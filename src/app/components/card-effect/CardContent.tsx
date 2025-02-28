@@ -1,13 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { list, Product } from '@/types/common';
 import NextImage from 'next/image';
 import { ShoppingBag, Minus, Plus } from 'lucide-react';
 
 function CardContent() {
-	const [products, setProducts] = useState<Product[]>(list);
-
 	const reduceQty = () => {
 		console.log('reduce--');
 	};
@@ -23,7 +21,7 @@ function CardContent() {
 	return (
 		<div className="container mx-auto py-8 px-24 lg:px-48">
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-				{products.map((product: Product, index: number) => (
+				{list.map((product: Product, index: number) => (
 					<div key={`${product.name}-${index}`}>
 						<div className="card-effect">
 							<div className="frame"></div>
