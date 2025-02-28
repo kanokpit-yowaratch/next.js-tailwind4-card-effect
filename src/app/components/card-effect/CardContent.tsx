@@ -39,7 +39,7 @@ function CardContent() {
 								priority // Optimizes loading
 								alt={product.name}
 							/>
-							<div className="flex items-center reduce-increase absolute bottom-2.5 sm:bottom-0 transition">
+							<div className="flex items-center reduce-increase absolute transition">
 								<button
 									className="h-8 py-1 px-2 bg-red-600 text-white rounded-bl-lg cursor-pointer"
 									onClick={() => reduceQty()}>
