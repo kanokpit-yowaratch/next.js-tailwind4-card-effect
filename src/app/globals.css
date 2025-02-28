@@ -1,5 +1,35 @@
 @import 'tailwindcss';
 
+@font-face {
+	font-family: 'Rubik';
+	font-weight: 400;
+	src: url('/fonts/Rubik-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Rubik';
+	font-weight: 500;
+	src: url('/fonts/Rubik-Medium.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Rubik';
+	font-weight: 600;
+	src: url('/fonts/Rubik-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Rubik';
+	font-weight: 700;
+	src: url('/fonts/Rubik-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Rubik';
+	font-weight: 900;
+	src: url('/fonts/Rubik-Black.ttf') format('truetype');
+}
+
 @theme {
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
@@ -21,4 +51,133 @@ body {
 	color: var(--foreground);
 	background: var(--background);
 	font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-effect {
+	position: relative;
+	display: grid;
+	place-items: center;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.card-effect .frame {
+	width: 100%;
+	height: 100%;
+	border-radius: 1rem;
+	color: #371a04;
+	text-shadow: 1px 0px 1px rgb(255, 255, 255);
+	background: #ddd url(../../public/images/food-bg.jpg) center/cover no-repeat;
+	aspect-ratio: 1;
+	transition: transform 0.5s;
+}
+
+.card-effect .price {
+	position: absolute;
+	font-family: 'Rubik';
+	transition: all 0.5s;
+}
+
+.card-effect .price {
+	bottom: 35px;
+	right: 3px;
+	font-weight: 600;
+	color: rgb(255, 255, 255);
+	font-size: 1rem;
+	font-family: 'Rubik';
+	font-weight: 700;
+	text-shadow:
+		0 1px 0 #5f4011,
+		0 2px 0 #553709,
+		0 3px 0 #412906,
+		0 4px 0 #3a1d03;
+}
+
+.card-effect .price .unit {
+	color: #371a04;
+	text-shadow: none;
+}
+
+.card-effect .link-to-detail {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.card-effect img {
+	transition: transform 0.5s;
+	transform: scale(0.7);
+}
+
+.card-effect .product-name {
+	transition: all 0.5s;
+	line-height: 1.25rem;
+}
+
+.card-effect .reduce-increase {
+	width: 100%;
+	transform: scale(0.85) translateY(-15px) translateZ(150px) rotateX(0deg);
+}
+
+.card-effect:hover .reduce-increase {
+	transform: scale(0.9) translateY(-14px) translateZ(150px) rotateX(0deg);
+}
+
+.card-effect:hover .frame {
+	transform: translateZ(0px) translateY(75px) rotateX(80deg);
+	box-shadow: 3px 3px 5px #c6c6c6;
+}
+
+.card-effect:hover .product-name {
+	opacity: 0;
+}
+
+.card-effect:hover img {
+	transform: scale(0.75) translateY(-15px) translateZ(150px);
+}
+
+.card-effect:hover .price {
+	bottom: 45px;
+	font-size: 120%;
+	color: rgba(0, 77, 33);
+	text-shadow:
+		1px 0 #fff,
+		-1px 0 #fff,
+		0 1px #fff,
+		0 -1px #fff,
+		1px 1px #fff,
+		-1px -1px #fff,
+		1px -1px #fff,
+		-1px 1px #fff;
+	transform: translateY(0px) translateZ(160px) translateX(-10px);
+}
+
+.font-rubik {
+	font-family: 'Rubik';
+}
+
+.font-700 {
+	font-weight: 700;
+}
+
+.font-600 {
+	font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+	.card-effect:hover img {
+		transform: scale(0.75) translateY(-35px) translateZ(150px);
+	}
+
+	.card-effect:hover .reduce-increase {
+		transform: scale(1) translateY(-51px) translateZ(200px) rotateX(0deg);
+	}
+
+	.card-effect:hover .price {
+		bottom: 95px;
+	}
 }
