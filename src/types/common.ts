@@ -6,7 +6,6 @@ export type Product = {
 	stock: number;
 	quantity: number;
 	cover: string;
-	categories?: any[];
 	createdAt?: Date;
 	updatedAt?: Date;
 };
